@@ -8,7 +8,7 @@ import { UserService } from './user.service';
 @ApiTags('User')
 export class UserController {
   constructor(private readonly service: UserService) {}
-  @Post()
+  @Post('register')
   @ApiBody({
     description: 'User information',
     type: UserDto,

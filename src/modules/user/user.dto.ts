@@ -36,3 +36,16 @@ export class UserDto {
   @IsNotEmpty()
   password: string;
 }
+export class UserLoginDto {
+  @ApiProperty({ type: String, example: 'hoanghai@gmail.com' })
+  @IsEmail()
+  @IsNotEmpty()
+  email: string;
+
+  @ApiProperty({ type: String, example: 'hoHo123' })
+  @MinLength(4)
+  @MaxLength(20)
+  @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)
+  @IsNotEmpty()
+  password: string;
+}
