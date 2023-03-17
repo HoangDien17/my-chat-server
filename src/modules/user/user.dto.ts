@@ -49,3 +49,8 @@ export class UserLoginDto {
   @IsNotEmpty()
   password: string;
 }
+
+export class KeyWordDto {
+  @ApiProperty({ type: String, example: 'hoanghai' })
+  keyWord?: string;
+}

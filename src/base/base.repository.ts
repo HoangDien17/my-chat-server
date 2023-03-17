@@ -43,11 +43,7 @@ export class BaseRepository<T extends Document> extends EventEmitter {
   }
 
   async findById(id: string): Promise<T> {
-    const model = await Promise.resolve(this.model.findById(id));
-    if (!model) {
-      throw new NotFoundException(`Not found id: ${id}`);
-    }
-    return model;
+    return Promise.resolve(this.model.findById(id));
   }
 
   async findByIdWithLean(id: string) {
